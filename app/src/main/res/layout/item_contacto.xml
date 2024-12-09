@@ -1,0 +1,45 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:elevation="2dp"
+    android:layout_margin="8dp">
+
+    <TextView
+        android:id="@+id/nombreTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nombre del contacto"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:paddingBottom="4dp"
+        />
+
+    <TextView
+        android:id="@+id/telefonoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Teléfono del contacto"
+        android:paddingBottom="4dp"
+ />
+
+    <TextView
+        android:id="@+id/correoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Correo del contacto"
+        android:paddingBottom="8dp"
+       />
+
+    <!-- Tópico del chat -->
+    <TextView
+        android:id="@+id/topicoTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tópico del chat"
+        android:paddingBottom="8dp" />
+
+
+
+</LinearLayout>
