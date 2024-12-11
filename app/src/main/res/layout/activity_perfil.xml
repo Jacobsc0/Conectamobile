@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Imagen de perfil -->
             <ImageView
                 android:id="@+id/imagenPerfil"
                 android:layout_width="120dp"
@@ -27,7 +26,6 @@
                 android:layout_marginBottom="16dp"
                 android:contentDescription="Foto de perfil" />
 
-            <!-- Campo para ingresar URL de la foto -->
             <EditText
                 android:id="@+id/urlFotoEditText"
                 android:layout_width="match_parent"
@@ -36,7 +34,6 @@
                 android:padding="10dp"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Campo de texto para el nombre -->
             <EditText
                 android:id="@+id/nombreEditText"
                 android:layout_width="match_parent"
@@ -45,7 +42,6 @@
                 android:padding="10dp"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Campo de texto para el estado -->
             <EditText
                 android:id="@+id/estadoEditText"
                 android:layout_width="match_parent"
@@ -54,7 +50,6 @@
                 android:padding="10dp"
                 android:layout_marginBottom="8dp" />
 
-            <!-- Campo de texto para la fecha de cumpleaños -->
             <EditText
                 android:id="@+id/cumpleEditText"
                 android:layout_width="match_parent"
@@ -64,7 +59,6 @@
                 android:padding="10dp"
                 android:layout_marginBottom="16dp" />
 
-            <!-- Botón para guardar cambios -->
             <Button
                 android:id="@+id/guardarCambiosBoton"
                 android:layout_width="match_parent"
@@ -72,7 +66,6 @@
                 android:text="Guardar cambios"
                 android:layout_marginTop="16dp" />
 
-            <!-- Botón para volver al menú -->
             <Button
                 android:id="@+id/volverMenuBoton"
                 android:layout_width="match_parent"
