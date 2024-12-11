@@ -23,7 +23,6 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
     private ArrayList<Contacto> listaContactos;
     private Context context;
 
-
     public ContactoAdapter(ArrayList<Contacto> listaContactos, Context context) {
         this.listaContactos = listaContactos;
         this.context = context;
@@ -44,7 +43,6 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
         holder.telefonoTextView.setText(contacto.getTelefono());
         holder.correoTextView.setText(contacto.getCorreo());
         holder.topicoTextView.setText(contacto.getTopico());
-
 
         holder.itemView.setOnLongClickListener(v -> {
             mostrarMenu(v, contacto, position);
@@ -79,23 +77,30 @@ public class ContactoAdapter extends RecyclerView.Adapter<ContactoAdapter.Contac
         context.startActivity(intent);
     }
 
-
     private void eliminarContacto(String id, int position) {
-        DatabaseReference contactoRef = FirebaseDatabase.getInstance()
-                .getReference("Contactos")
-                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                .child(id);
+        if (position >= 0 && position < listaContactos.size()) {
+            DatabaseReference contactoRef = FirebaseDatabase.getInstance()
+                    .getReference("Contactos")
+                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .child(id);
 
-        contactoRef.removeValue()
-                .addOnCompleteListener(task -> {
-                    if (task.isSuccessful()) {
-                        listaContactos.remove(position);
-                        notifyItemRemoved(position);
-                        Toast.makeText(context, "Contacto eliminado", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(context, "Error al eliminar el contacto", Toast.LENGTH_SHORT).show();
-                    }
-                });
+            contactoRef.removeValue()
+                    .addOnCompleteListener(task -> {
+                        try {
+                            if (task.isSuccessful()) {
+                                listaContactos.remove(position);
+                                notifyItemRemoved(position);
+                                Toast.makeText(context, "Contacto eliminado", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Toast.makeText(context, "Error al eliminar el contacto", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    });
+        } else {
+            Toast.makeText(context, "Índice no válido", Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

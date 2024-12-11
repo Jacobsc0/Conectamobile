@@ -29,7 +29,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import java.util.ArrayList;
 import java.util.HashSet;
 
-public class ChatEnVivoActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity {
 
     private ListView listViewMensajes;
     private EditText editTextMensaje;
@@ -105,7 +105,7 @@ public class ChatEnVivoActivity extends AppCompatActivity {
                 @Override
                 public void onFailure(IMqttToken asyncActionToken, Throwable exception) {
                     Log.e("MQTT", "Error al conectar: " + exception.getMessage());
-                    Toast.makeText(ChatEnVivoActivity.this, "Error al conectar al servidor MQTT", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ChatActivity.this, "Error al conectar al servidor MQTT", Toast.LENGTH_SHORT).show();
                 }
             });
 

@@ -39,7 +39,7 @@ public class ContactoAdapterChat extends RecyclerView.Adapter<ContactoAdapterCha
         holder.topicoTextView.setText(contacto.getTopico());
 
         holder.itemView.setOnClickListener(v -> {
-            Intent intent = new Intent(context, ChatEnVivoActivity.class);
+            Intent intent = new Intent(context, ChatActivity.class);
             intent.putExtra("usuarioEmail", FirebaseAuth.getInstance().getCurrentUser().getEmail());
             intent.putExtra("usuarioDestinatario", contacto.getCorreo());
             intent.putExtra("topico", contacto.getTopico());
